@@ -147,8 +147,6 @@ Next, write a function named `nap`. This function takes in a single parameter: `
 Inside of this function write a for-loop that will iterate through the `napSchedule` array and console.log the message: `ZzZzZzZz` if the schedule is `true`, otherwise the it will console.log the message: `Gotta get coding!` if the schedule is `false`.
 */
 
-
-
 /* 10) Copy Pasta
 Declare a variable named `valuesArray` and assign its value to be an array: `[99, 66, 829, 1941, 8, 76]`. 
 Declare another variable named `copyValuesArray` and assing its value to an empty array.
@@ -160,8 +158,16 @@ Write a function named `copyArray` which takes two arguments: `originArray` and 
 
 Inside of this function write a for-loop that will iterate through the contents of the `originArray` and pushes each element of that array into `destinationArray`. Console.log your result.
 */
-
-
+var valuesArray = [99, 66, 829, 1941, 8, 76];
+var copyValuesArray = [];
+function copyArray(originArray,destinationArray){
+	for(var i =0;i<originArray.length; i++){
+		destinationArray.push(originArray[i]);
+	}
+	return destinationArray;
+}
+console.log(copyArray(valuesArray, copyValuesArray));
+console.log(copyValuesArray);
 
 /*Final Boss*/
 
@@ -169,9 +175,20 @@ Inside of this function write a for-loop that will iterate through the contents 
 Declare a variable named `topQuote` and assign it to a String value of your favorite one line quote.
 Write a function that will iterate through the string value and return the longest word in that quote. Console.log your result.
 */
+var topQuote = ("Sometimes, making the wrong choice is better than making no choice. You have the courage to go forward, that is rare.");
 
+function longestWord(str){
+	var strToArray = str.split(" ");
+	var currentWord = "";
+	for(var i = 0; i< strToArray.length; i++){
+		if(strToArray[i].length > currentWord.length){
+			currentWord = strToArray[i];
+		}
+	}
+return currentWord;
+}
 
-
+console.log(longestWord(topQuote));
 /* 12) Puppet Master
 Declare a variable named `miscStorage` set it's value to be: `[ [], 'Carrots', 9, 'Beets', {}, {name: "Todd B."}, 'Mush' ]`
 Write a function named `generateArrayOfStrings` which takes a single argument `storage`. This function will return a new Array with only `String` values inside of it.
